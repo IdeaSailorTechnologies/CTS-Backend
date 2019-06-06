@@ -4,15 +4,20 @@
   "description": "server code for web app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "author": "Shivani Patil",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "mongoose": "^5.5.12",
+    "mongoose": "^5.5.12"
+  
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
     "morgan": "^1.9.1"
   }
 }

@@ -3,8 +3,15 @@ const customercontroller = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const Customer = require('../models/customerModel');
+const { check, validationResult } = require('express-validator/check');
+
 
 exports.saveCustomer = (req, res, next) => {
+    const errorsList = validationResult(req);
+    if (!errorsList.isEmpty()) {
+      return res.status(422).json({ errors: errorsList.array() });
+    }
+
     Customer.find({emailAddress: req.body.emailAddress})
     .exec()
     .then( resp => {
